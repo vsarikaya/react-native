@@ -1,7 +1,9 @@
-'use strict';
-
 import { combineReducers } from 'redux';
 
-export default userReducers = combineReducers({
-    users : require('./userReducers')
+/* eslint-disable global-require */
+const userReducers = combineReducers({
+  users: require('./userReducers')
 });
+/* eslint-enable global-require */
+
+export default userReducers;
