@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
+import users from './userReducers';
 
 /* eslint-disable global-require */
-const userReducers = combineReducers({
-  users: require('./userReducers')
+const reducers = combineReducers({
+  users
 });
 /* eslint-enable global-require */
 
-export default userReducers;
+export default reducers;

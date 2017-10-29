@@ -1,5 +1,5 @@
-const userActions = require('./userActions');
+import userActions from './userActions';
 
-module.exports = {
+export default {
   ...userActions
 };
