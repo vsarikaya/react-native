@@ -5,9 +5,9 @@ export default class User {
     age: number;
 
     /**
-     * Kullanıcı Bilgileri
-     * @param {*string} fullname - Kullanıcı adı
-     * @param {*number} age - Kullanıcı Yaşı
+     * User Information
+     * @param {*string} fullname
+     * @param {*number} age
      *
      * @returns User
      */
