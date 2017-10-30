@@ -1,5 +1,5 @@
 # React-Native
-React - Redux - Eslint - Logger
+React - Redux - Flow - Eslint - Logger
 
 # Install
 
