@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, ListView, ScrollView } from 'react-native';
+import { Text, View, Button, ListView, ScrollView, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ActionCreators from './actions';
@@ -23,8 +23,6 @@ type Props = {
   }
 };
 
-// const ds = new ListView.DataSource({ rowHasChanged: (r1: any, r2: any): any => r1 !== r2 });
-
 class Index extends React.Component<Props, void> {
 
   constructor(props: any) {
@@ -37,11 +35,11 @@ class Index extends React.Component<Props, void> {
   }
 
   componentWillReceiveProps() {
-    // ds.cloneWithRows(this.props.users);
+    
   }
 
   addNewUser = (): mixed => {
-    this.props.actions.add_users(new User(this.getRndInteger(1, 100), 'Demo User ' + this.getRndInteger(1, 100), this.getRndInteger(20, 60)));
+    this.props.actions.add_users(new User(this.getRndInteger(1, 100), `Demo User ${this.getRndInteger(1, 100)}`, this.getRndInteger(20, 60)));
   }
 
   getRndInteger(min: number, max: number): number {
@@ -50,13 +48,10 @@ class Index extends React.Component<Props, void> {
 
   render(): React$Element<any> {
 
-    const { add_users, fetch_users, edit_users } = this.props.actions;
-
     if (this.props.isLoading) {
       return (
-        <View style={styles.container}>
-          <Text>Loading...</Text>
-        </View>
+        <ActivityIndicator size="large"
+          style={styles.activityIndicator} />
       );
     }
 

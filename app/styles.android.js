@@ -12,5 +12,9 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: 80
+  },
+  activityIndicator: {
+    flex: 1,
+    justifyContent: 'center'
   }
 });
