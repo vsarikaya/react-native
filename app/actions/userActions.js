@@ -1,8 +1,8 @@
 import User from '../models/User';
 import type { Action } from './types';
 
-function show_users(): Action {
-  return { type: 'SHOW_USERS' };
+function fetch_users(): Action {
+  return { type: 'FETCH_USERS' };
 }
 
 function add_users(user: User): Action {
@@ -16,5 +16,5 @@ function edit_users(user_id: number, user: User): Action {
 module.exports = {
   edit_users,
   add_users,
-  show_users
+  fetch_users
 };

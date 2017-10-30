@@ -18,7 +18,7 @@
     },
     "parser": "babel-eslint",
     "rules": {
-        "indent": [1, 2],
+        "indent": 0,
         "no-console": 0,
         "max-len": 0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -29,7 +29,7 @@
         "react/jsx-boolean-value": 1,
         "react/jsx-closing-bracket-location": 1,
         "react/jsx-curly-spacing": 1,
-        "react/jsx-indent-props": 1,
+        "react/jsx-indent-props": 0,
         "react/jsx-key": 1,
         "linebreak-style" : "off",
         "react/jsx-max-props-per-line": 1,

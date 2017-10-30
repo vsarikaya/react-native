@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, ListView, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ActionCreators from './actions';
@@ -17,47 +17,80 @@ type Props = {
   isLoading: boolean,
   users: Array<User>,
   actions: {
-    show_users: () => State,
+    fetch_users: () => State,
     add_users: (user: User) => State,
     edit_users: (user_id: number, user: User) => State
   }
 };
 
+// const ds = new ListView.DataSource({ rowHasChanged: (r1: any, r2: any): any => r1 !== r2 });
+
 class Index extends React.Component<Props, void> {
 
+  constructor(props: any) {
+    super(props);
+
+    setTimeout(() => {
+      this.props.actions.fetch_users();
+    }, 1000);
+
+  }
+
+  componentWillReceiveProps() {
+    // ds.cloneWithRows(this.props.users);
+  }
+
   addNewUser = (): mixed => {
-    this.props.actions.add_users(new User(12, '12', 12));
+    this.props.actions.add_users(new User(this.getRndInteger(1, 100), 'Demo User ' + this.getRndInteger(1, 100), this.getRndInteger(20, 60)));
+  }
+
+  getRndInteger(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   render(): React$Element<any> {
 
-    const { add_users, show_users, edit_users } = this.props.actions;
+    const { add_users, fetch_users, edit_users } = this.props.actions;
+
+    if (this.props.isLoading) {
+      return (
+        <View style={styles.container}>
+          <Text>Loading...</Text>
+        </View>
+      );
+    }
 
     return (
-      <View style={styles.container}>
-        {
-          this.props.users.length ? (
-            this.props.users.map((person: User, i: number): any => (
-              <View key={i} >
-                <Text>Name: {person.fullname}</Text>
-                <Text>Age: {person.age}</Text>
-              </View>))
-          ) : (
-            <View>
-              <Text>Open up App.js to start working on your app!</Text>
-              <Text>Changes you make will automatically reload.</Text>
-              <Text>Shake your phone to open the developer menu.</Text>
-              <Text>{[1, 2].length}</Text>
-            </View>
-          )
-        }
+      <View style={styles.mainview}>
+        <ScrollView>
+          <View style={styles.container}>
+          <Button onPress={this.addNewUser}
+                    title="Add New User"
+                    style={{ marginTop: 100 }} />
 
-        {/* Function */}
-        <Button onPress={this.addNewUser} title="Add New User">Add New User</Button>
+            { this.props.users.length > 0 ?
+              (
+                <View>
+                  <Text style={{ marginTop: 20, fontSize: 20, fontWeight: 'bold' }}>List Of Staffs</Text>
 
-        {/* inline */}
-        <Button onPress={(): mixed => add_users(new User(5555, '5555', 5555))} title="Add New User">Add New User</Button>
+                  {this.props.users.map((person: User, i: number): any => (
+                    <View key={i} >
+                      <Text>{person.fullname} is {person.age} years old.</Text>
+                    </View>))
+                  }
+                </View>
+              ) : (
+                <View style={{ marginTop: 20 }}>
+                  <Text>Please Add New User</Text>
+                </View>
+              )
+            }
 
+            {/* inline */}
+            {/* <Button onPress={(): mixed => add_users(new User(5555, '5555', 5555))}
+                    title="Add New User">Add New User</Button> */}
+          </View>
+        </ScrollView>
       </View>
     );
   }

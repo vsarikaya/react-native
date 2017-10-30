@@ -3,10 +3,7 @@ import type { Action } from '../actions/types';
 
 const initialState = {
   isLoading: true,
-  usersList: [
-    new User(111, 'Volkan', 29),
-    new User(222, 'Ahmet', 30)
-  ]
+  usersList: []
 };
 
 type State = {
@@ -18,7 +15,7 @@ export default function users(state: State = initialState, action: Action): Stat
 
   switch (action.type) {
 
-  case 'SHOW_USERS':
+  case 'FETCH_USERS':
     return {
       ...state,
       isLoading: false
@@ -26,22 +23,10 @@ export default function users(state: State = initialState, action: Action): Stat
 
   case 'ADD_USERS': {
     return {
-      isLoading: true,
+      ...state,
       usersList: [...state.usersList, action.user]
     };
   }
-
-  case 'EDIT_USERS':
-    return state.usersList.map((user: User): State => {
-      if (user.id === action.user_id) {
-        return Object.assign({}, user, {
-          id: user.id,
-          fullname: user.fullname,
-          age: user.age
-        });
-      }
-      return user;
-    });
 
   default:
     return state;

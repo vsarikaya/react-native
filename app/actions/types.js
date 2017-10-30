@@ -4,7 +4,7 @@ type ParseObject = Object;
 
 
 export type Action =
-    { type: 'SHOW_USERS' }
+    { type: 'FETCH_USERS' }
   | { type: 'EDIT_USERS', user_id: number, user: User }
   | { type: 'ADD_USERS', user: User };
 
