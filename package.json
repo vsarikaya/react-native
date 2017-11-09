@@ -1,0 +1,48 @@
+{
+  "name": "Antasya",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-flow": "^2.29.1",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.49.1",
+    "jest-expo": "^21.0.2",
+    "prettier-eslint": "^8.2.1",
+    "react-native-scripts": "1.5.0",
+    "react-test-renderer": "16.0.0-alpha.12"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "lint": "eslint **/*.js --ignore-pattern node_modules/",
+    "flow-start": "flow start",
+    "flow-stop": "flow stop",
+    "flow-status": "flow status",
+    "flow-coverage": "flow coverage"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "expo": "^21.0.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.48.4",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
+  }
+}

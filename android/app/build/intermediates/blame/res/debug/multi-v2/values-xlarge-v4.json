@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\wamp64\\www\\Antasya2\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\VoLKaN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\c9d3b73292de171a95bb7de9337f2c5b\\res\\values-xlarge\\values-xlarge.xml",
+                    "from": {
+                        "startLines": "4,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "282,587,651,718,785,851,917",
+                        "endColumns": "76,63,66,66,65,65,54",
+                        "endOffsets": "354,646,713,780,846,912,967"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,132,196,263,330,396,462",
+                        "endColumns": "76,63,66,66,65,65,54",
+                        "endOffsets": "127,191,258,325,391,457,512"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\xampp\\htdocs\\react-native\\AntasyaNative\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\musta\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\d76f7e3d176890a99e9667bc770a6a54\\res\\values-xlarge\\values-xlarge.xml",
+                    "from": {
+                        "startLines": "4,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "282,587,651,718,785,851,917",
+                        "endColumns": "76,63,66,66,65,65,54",
+                        "endOffsets": "354,646,713,780,846,912,967"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,132,196,263,330,396,462",
+                        "endColumns": "76,63,66,66,65,65,54",
+                        "endOffsets": "127,191,258,325,391,457,512"
+                    }
+                }
+            ]
+        }
+    ]
+}
